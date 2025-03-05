@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Course {
   title: string;
@@ -138,12 +139,12 @@ const Courses: React.FC = () => {
 
         {/* Learn More Button for ADSE & CPISM */}
         {(selectedCourse === "ADSE" || selectedCourse === "CPISM") && (
-          <a
-            href={selectedCourse === "ADSE" ? "/adse" : "/cpism"}
-            className="mt-6 inline-block bg-red-600 text-white text-lg font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-red-700 transition-all"
-          >
-            Learn More
-          </a>
+      <Link
+      to={selectedCourse === "ADSE" ? "/adse" : "/cpism"}
+      className="mt-6 inline-block bg-red-600 text-white text-lg font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-red-700 transition-all"
+    >
+      Learn More
+    </Link>
         )}
       </div>
 
